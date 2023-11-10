@@ -64,7 +64,7 @@ class PatientController extends Controller
         $request->validate(
             [
                 'name' =>'required',
-                'contact'=>'required|min:10',
+                'contact'=>'required|min:10|max:10',
                 'address'=>'required',
                 'email'=>'required|email'
 
