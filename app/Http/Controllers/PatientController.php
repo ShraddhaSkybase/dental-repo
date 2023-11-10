@@ -61,6 +61,16 @@ class PatientController extends Controller
     public function store(Request $request)
     {
     
+        $request->validate(
+            [
+                'name' =>'required',
+                'contact'=>'required|min:10',
+                'address'=>'required',
+                'email'=>'required|email'
+
+        ]
+     );
+
         $patient=new User;
         $patient->name=$request['name'];
         $patient->contact=$request['contact'];
