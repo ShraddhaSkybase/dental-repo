@@ -61,6 +61,15 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate(
+            [
+                'name'=>'required',
+                'description'=>'required|max:500',
+                'cost'=>'required',
+                'duration'=>'required'
+            ]
+            );
         $service=new Service;
         $service->name=$request['name'];
         $service->description=$request['description'];
@@ -94,6 +103,15 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Service $service)
     {
+
+        $request->validate(
+            [
+                'name'=>'required',
+                'description'=>'required|max:500',
+                'cost'=>'required',
+                'duration'=>'required'
+            ]
+            );
         $service->name=$request['name'];
         $service->description=$request['description'];
         $service->cost=$request['cost'];

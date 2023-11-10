@@ -109,6 +109,16 @@ class PatientController extends Controller
     public function update(Request $request, User $patient)
     {
 
+        $request->validate(
+            [
+                'name' =>'required',
+                'contact'=>'required|min:10|max:10',
+                'address'=>'required',
+                'email'=>'required|email'
+
+        ]
+     );
+     
     $patient->name=$request['name'];
     $patient->address=$request['address'];
     $patient->contact=$request['contact'];
