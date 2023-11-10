@@ -67,6 +67,13 @@ class MedicalRecordController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'user_id'=> 'required|exists:users,id',
+           'medical_condition'=>'required',
+            'allergies'=> 'required|string',
+            
+            
+        ]);
         $medicalRecord=new MedicalRecord;
       
         $medicalRecord->user_id=$request['user_id'];
@@ -101,6 +108,13 @@ class MedicalRecordController extends Controller
      */
     public function update(Request $request, MedicalRecord $medicalRecord)
     {
+        $request->validate([
+            'user_id'=> 'required|exists:users,id',
+           'medical_condition'=>'required',
+            'allergies'=> 'required|string',
+            
+            
+        ]);
  
         $medicalRecord->user_id=$request['user_id'];
         $medicalRecord->medical_condition=$request['medical_condition'];
