@@ -56,6 +56,10 @@ class DentistController extends Controller
      */
     public function store(Request $request)
     {
+      
+
+
+
         $dentist=new User;
         $dentist->name=$request['name'];
         $dentist->contact=$request['contact'];

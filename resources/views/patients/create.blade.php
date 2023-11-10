@@ -31,6 +31,7 @@
 <div class="form-group">
     <label>Address</label>
     <input type="text" name="address" class="form-control" placeholder="Enter Address" value="{{old('address')}}">
+
     <span class="text-danger">
         @error('address')
         {{$message}}
@@ -43,6 +44,7 @@
 <div class="form-group">
     <label>Email</label>
     <input type="email" name="email" class="form-control" placeholder="Enter Email" value="{{old('email')}}">
+    
     <span class="text-danger">
         @error('email')
         {{$message}}

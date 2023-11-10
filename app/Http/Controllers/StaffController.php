@@ -56,6 +56,8 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
+
+
         $staff=new User;
         $staff->name=$request['name'];
         $staff->contact=$request['contact'];
